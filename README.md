@@ -9,7 +9,7 @@
 
 ## Descripción del Proyecto " Asignación de Aulas"
 El problema de la superposición de horarios y la asignación eficiente de aulas en las instituciones educativas es un desafío común que puede generar diversos inconvenientes, como la pérdida de tiempo, la frustración de los docentes y alumnos, y la mala utilización de los recursos disponibles. 
-Para lograrlo necesita informatizar el sistema de reservas. Cuenta con los siguientes  datos de:
+Para lograrlo  se necesita informatizar el sistema de reservas. Cuenta con los siguientes  datos de:
 * los edificios (Nombre, Dirección, cantidad de pisos)
 * las aulas (Nombre, Capacidad, ubicación física) con sus respectivas características (aulataller, proyector, clase en vivo, butacas, pupitres)
 * los usuarios (Datos personales, Materia, Cargo)
