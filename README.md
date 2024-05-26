@@ -4,7 +4,7 @@
 |---|---|---|---|---|
 | Carlos | Garcia | 40518523 | carlos.edu.garcia8@gmail.com | https://github.com/douglasg14b |
 | Raul | Moreno | 29201107 | moreno.r.alberto@gmail.com | https://github.com/morenoh149 |
-| Félix | Tapia | 42217815 | felixcruztapia@gmail.com | https://github.com/apache/felix-dev |
+| Félix | Tapia | 42217815 | felixcruztapia@gmail.com | https://github.com/FelixCBA/Ejercicio_de_clase.git |
 | Alejandra | Zotta | 20774460 | alejandra.zotta@unc.edu.ar | https://github.com/alejandrazotta |
 
 ## Descripción del Proyecto " Asignación de Aulas"
