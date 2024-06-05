@@ -30,13 +30,15 @@ Algoritmo Diseño
 			Leer solo_butacas
 			Escribir 'Necesita que el aula tenga pupitres: '
 			Leer con_pupitres
+			Escribir 'Necesita que en el aula se pueda transmitir en vivo la clase:  '
+			Leer emision_vivo
 			Escribir 'Ingrese el horario en el cual desea reservar el aula: '
 			Leer horario
 			
 			
 		Fin Si
 		Si _opcion = 2 Entonces
-			
+			// Se solicitan los datos necesarios para cancelar una reserva.
 		Fin Si
 		Si _opcion = 3 Entonces
 			
