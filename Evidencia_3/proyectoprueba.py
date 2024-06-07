@@ -1,3 +1,15 @@
+"""
+Primer menú
+contiene las opciones:
+reserva del aula
+cancelar
+ver reserva
+salir
+"""
+
+
+
+
 def reservar_aula():
     # Opcion de reserva
     print("Agendando reserva...")
