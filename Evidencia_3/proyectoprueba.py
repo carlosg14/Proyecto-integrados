@@ -13,11 +13,13 @@ def main():
     while True:
 
         # Impresion del menu.
+        print('=' * 30)
         print("Menú:")
         print("1) Reservar aula")
         print("2) Cancelar reserva")
         print("3) Ver reserva")
         print("4) Salir")
+        print('=' * 30)
         opcion = input("Ingrese el número de la opción que desea realizar: ")
 
         # Llamada a la funcion correspondiente.
