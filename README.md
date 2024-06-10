@@ -14,3 +14,10 @@ Para lograrlo  se necesita informatizar el sistema de reservas. Cuenta con los s
 * las aulas (Nombre, Capacidad, ubicación física) con sus respectivas características (aulataller, proyector, clase en vivo, butacas, pupitres)
 * los usuarios (Datos personales, Materia, Cargo)
 * Horario de uso 07.00 a 22:00
+
+## Modulos del programa
+
+* **Principal.py**: En este módulo se encuentra el menú principal de la aplicación. Desde este módulo se llaman a las demás funciones que se encuentran en el módulo CRUD.
+* **CRUD.py**: Aquí encontramos funciones encargadas de realizar las consultas a la base de datos.
+
+  
