@@ -1,3 +1,5 @@
+import Conexion_BD
+
 def reservar_aula(dni_usuario, capacidad_aula, proyector, aula_taller, solo_butacas, con_pupitres, horarios):
 
     """
