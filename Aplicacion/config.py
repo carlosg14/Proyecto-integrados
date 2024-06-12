@@ -5,5 +5,5 @@ Este es un archivo de configuracion. Aqui debe cargar las credenciales de la bas
 
 config = {'host': 'localhost',
           'user': 'root',
-          'password': '',
+          'password': 'MYSQL20242310tecdc',
           'database': 'proyecto_aulas'}

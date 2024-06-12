@@ -26,7 +26,7 @@ def conexion_bd(comando_sql: str, datos: dict, tipo: int):
     conexion = mysql.connector.connect(**config.config)
 
     # Se ejecuta el comando sql.
-    cursor = conexion.cursor()
+    cursor = conexion.cursor(dictionary=True)
     cursor.execute(comando_sql, datos)
 
     # En base al tipo de operacion se retorna lo que corresponde.

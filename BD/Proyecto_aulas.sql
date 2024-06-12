@@ -73,8 +73,8 @@ DEFAULT CHARACTER SET = utf8mb3;
 CREATE TABLE IF NOT EXISTS `proyecto_aulas`.`reserva` (
   `DNI` INT NOT NULL,
   `idaula` INT NOT NULL,
-  `Horario_Inicio` SET('7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00') NOT NULL,
-  `Horario_Finalizacion` SET('8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00') NOT NULL,
+  `Horario_Inicio` time NOT NULL,
+  `Horario_Finalizacion`time NOT NULL,
   PRIMARY KEY (`DNI`, `idaula`, `Horario_Inicio`),
   INDEX `idaulas_idx` (`idaula` ASC) VISIBLE,
   CONSTRAINT `DNI`

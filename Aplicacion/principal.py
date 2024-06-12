@@ -1,4 +1,5 @@
 import CRUD
+from os import system
 
 
 def main():
@@ -10,6 +11,10 @@ def main():
 
             [None]: Esta funcion no retorna nada.
     """
+
+
+    dni_usuario = CRUD.login()
+
     while True:
 
         # Impresion del menu.
@@ -24,11 +29,22 @@ def main():
 
         # Llamada a la funcion correspondiente.
         if opcion == "1":
-            CRUD.reservar_aula()
+
+            # Se solicitan los datos
+            capacidad_aula = int(input('Ingrese la capacidad que desea que tenga el aula: '))
+            proyector = bool(int(input('Ingrese si quiere que posea proyector (1 -> si, 2 -> no.): ')))
+            emicion_en_vivo = int(input('Ingrese si quiere que posea capacidad de emitir en vivo (1 -> si, 2 -> no.): '))
+            tipo_aula = int(input('Ingrese el tipo de aula que desea reservar (1:Taller, 2:Auditorio, 3:Tradicional): '))
+            horario_inicio = input('Ingrese el horario a recervar el aula (De 7 a 22 hs)(Formato Horas:Minutos): ')
+            horario_finalizacion = input('Ingrese el horario de finalizacion (De 7 a 22 hs)(Formato Horas:Minutos): ')
+            system('cls')
+            CRUD.reservar_aula(dni_usuario, capacidad_aula, proyector, emicion_en_vivo,  tipo_aula, horario_inicio,
+                               horario_finalizacion)
         elif opcion == "2":
             CRUD.cancelar_reserva()
         elif opcion == "3":
-            CRUD.ver_reserva()
+            cod_aula = int(input('Ingrese el codigo del aula: '))
+            CRUD.ver_reservas(cod_aula)
         elif opcion == "4":
             print("¡Hasta luego!")
             break
