@@ -53,7 +53,7 @@ def main():
             print("¡Hasta luego!")
             break
         elif opcion == "5":
-            
+
         else:
             print("Opción no válida. Por favor, ingrese un número del 1 al 4.")
 
