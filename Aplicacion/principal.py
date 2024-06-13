@@ -1,5 +1,5 @@
 import CRUD
-from os import system
+import Login
 
 
 def main():
@@ -13,17 +13,19 @@ def main():
     """
 
 
-    dni_usuario = CRUD.login()
+    dni_usuario = Login.login()
 
     while True:
 
         # Impresion del menu.
+        print('\n' * 50 )
         print('=' * 30)
         print("Menú:")
         print("1) Reservar aula")
         print("2) Cancelar reserva")
         print("3) Ver reserva")
         print("4) Salir")
+        print('5) CRUD')
         print('=' * 30)
         opcion = input("Ingrese el número de la opción que desea realizar: ")
 
@@ -41,13 +43,17 @@ def main():
             CRUD.reservar_aula(dni_usuario, capacidad_aula, proyector, emicion_en_vivo,  tipo_aula, horario_inicio,
                                horario_finalizacion)
         elif opcion == "2":
-            CRUD.cancelar_reserva()
+            horario_inicio = input('Ingrese el horario de inicio de la reserva(Formato H:M): ')
+            cod_aula = int(input('Ingrese el codigo del aula que esta reservada: '))
+            CRUD.cancelar_reserva(dni_usuario, horario_inicio, cod_aula)
         elif opcion == "3":
             cod_aula = int(input('Ingrese el codigo del aula: '))
             CRUD.ver_reservas(cod_aula)
         elif opcion == "4":
             print("¡Hasta luego!")
             break
+        elif opcion == "5":
+            
         else:
             print("Opción no válida. Por favor, ingrese un número del 1 al 4.")
 

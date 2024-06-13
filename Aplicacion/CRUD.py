@@ -1,6 +1,6 @@
 from Conexion_BD import conexion_bd
-from datetime import datetime
-from os import system
+from Formateador import formateador
+
 
 
 def reservar_aula(dni_usuario, capacidad_aula, proyector, emision_en_vivo, tipo_aula, horario_inicio, horario_finalizacion):
@@ -71,7 +71,7 @@ def reservar_aula(dni_usuario, capacidad_aula, proyector, emision_en_vivo, tipo_
     print('\n La reserva a sido registrada con exito.')
 
 
-def cancelar_reserva(dni_usuario, horario, cod_aula):
+def cancelar_reserva(dni_usuario, horario_inicio, cod_aula):
 
     """
     Esta funcion se encarga de eliminar una reserva, para lo cual confirma si la misma
@@ -80,7 +80,7 @@ def cancelar_reserva(dni_usuario, horario, cod_aula):
     Parametros:
 
         dni_usuario [int]
-        horario [datetime]: Horario de la reserva.
+        horario_inicio [datetime]: Horario de la reserva.
         cod_aula [int]: Codigo del aula reservada.
 
     Rertorno:
@@ -89,7 +89,12 @@ def cancelar_reserva(dni_usuario, horario, cod_aula):
          - Si la reserva fue cancelada con exito.
 
     """
-    print("Cancelando reserva...")
+
+    consulta = ('DELETE FROM reserva where DNI = %(dni)s and Horario_Inicio = %(inicio)s and idaula = %(aula)s')
+
+    datos  = {'dni': dni_usuario, 'inicio': horario_inicio, 'aula': cod_aula}
+
+    conexion_bd(consulta, datos, 4)
 
 
 def ver_reservas(cod_aula):
@@ -107,40 +112,6 @@ def ver_reservas(cod_aula):
     volver = input('\n Presione una letra para volver al menu:  ')
     return
 
-def crud():
-    pass
-
-
-def formateador(resultados: list) -> None:
-
-    """
-   Esta funcion se encarga de presentar en formato de tabla a traves de la consola los datos que contiene
-   resultado.
-
-    Parametros:
-        - resultado [list]: Lista de dicionarios que contiene resultados de una consulta SQL.
-
-    Retornos:
-        - None: Esta funcion no retorna nada
-    """
-
-    # Creacion e impresion del encambezado de cada tabla.
-    print('=' * len(resultados[0]) * 21 + '=')
-    linea = '|'
-    for resultado in resultados[0].keys():
-        linea = linea + '{:^20}|'.format(str(resultado))
-    print(linea)
-    print('=' * len(linea))
-
-    # Insersion de los datos en una tabla e impresion de la misma.
-    for registro in resultados:
-        linea = '|'
-        for atributo in registro.values():
-            linea = linea + '{:^20}|'.format(str(atributo))
-        print(linea)
-        print('-' * len(linea))
-    print('')
-
 
 def login():
     """
@@ -149,6 +120,7 @@ def login():
     Retornos
         dni [int]
     """
+    print('\n' * 50)
     nuevo = input('Ingrese 1 si ya tiene usario, 0 si no: ')
     if nuevo == '1':
         # Se auntentifica la identidad del usuario.
@@ -160,7 +132,7 @@ def login():
             credencial = conexion_bd(consulta, dato, 1)
 
             if credencial[0]['Password'] == passw:
-                system('cls')
+                print('\n' * 50)
                 return usuario
             else:
                 print('Contraseña invalida')
