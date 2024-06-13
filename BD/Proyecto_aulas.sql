@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `proyecto_aulas`.`Telefonos` (
   `DNI` INT NOT NULL,
   `Telefono` INT NOT NULL,
   PRIMARY KEY (`DNI`, `Telefono`),
-  CONSTRAINT `dni`
+  CONSTRAINT `fk_dni`
     FOREIGN KEY (`DNI`)
     REFERENCES `proyecto_aulas`.`usuarios` (`dni`)
     ON DELETE NO ACTION
