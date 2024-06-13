@@ -18,14 +18,17 @@ def main():
     while True:
 
         # Impresion del menu.
-        print('\n' * 50 )
+        print('\n' * 50)
         print('=' * 30)
         print("Menú:")
         print("1) Reservar aula")
-        print("2) Cancelar reserva")
+        print("2) Cancelar o modificar reserva .")
         print("3) Ver reserva")
-        print("4) Salir")
-        print('5) CRUD')
+        print("4) Aulas (CRUD)")
+        print('5) Edificios (CRUD)')
+        print('6) Usuarios (CRUD)')
+        print('7) Telefonos (CRUD) ')
+        print('8) Salir')
         print('=' * 30)
         opcion = input("Ingrese el número de la opción que desea realizar: ")
 
@@ -34,8 +37,8 @@ def main():
 
             # Se solicitan los datos
             capacidad_aula = int(input('Ingrese la capacidad que desea que tenga el aula: '))
-            proyector = bool(int(input('Ingrese si quiere que posea proyector (1 -> si, 2 -> no.): ')))
-            emicion_en_vivo = int(input('Ingrese si quiere que posea capacidad de emitir en vivo (1 -> si, 2 -> no.): '))
+            proyector = bool(int(input('Ingrese si quiere que posea proyector (1 -> si, 0 -> no.): ')))
+            emicion_en_vivo = int(input('Ingrese si quiere que posea capacidad de emitir en vivo (1 -> si, 0 -> no.): '))
             tipo_aula = int(input('Ingrese el tipo de aula que desea reservar (1:Taller, 2:Auditorio, 3:Tradicional): '))
             horario_inicio = input('Ingrese el horario a recervar el aula (De 7 a 22 hs)(Formato Horas:Minutos): ')
             horario_finalizacion = input('Ingrese el horario de finalizacion (De 7 a 22 hs)(Formato Horas:Minutos): ')
@@ -50,10 +53,16 @@ def main():
             cod_aula = int(input('Ingrese el codigo del aula: '))
             CRUD.ver_reservas(cod_aula)
         elif opcion == "4":
-            print("¡Hasta luego!")
-            break
+            pass
         elif opcion == "5":
-
+            pass
+        elif opcion == "6:":
+            pass
+        elif opcion == "7":
+            pass
+        elif opcion == "8":
+            print('Hasta luego!!!')
+            break
         else:
             print("Opción no válida. Por favor, ingrese un número del 1 al 4.")
 

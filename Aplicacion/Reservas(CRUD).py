@@ -74,8 +74,8 @@ def reservar_aula(dni_usuario, capacidad_aula, proyector, emision_en_vivo, tipo_
 def cancelar_reserva(dni_usuario, horario_inicio, cod_aula):
 
     """
-    Esta funcion se encarga de eliminar una reserva, para lo cual confirma si la misma
-    existe y en ese caso cancela la reserva.
+    Esta funcion se encarga de eliminar  o actualizar una reserva, para lo cual confirma si la misma
+    existe y en ese caso cancela o actualiza la reserva.
 
     Parametros:
 
@@ -83,33 +83,45 @@ def cancelar_reserva(dni_usuario, horario_inicio, cod_aula):
         horario_inicio [datetime]: Horario de la reserva.
         cod_aula [int]: Codigo del aula reservada.
 
-    Rertorno:
-
-        Esta funcion no retorna nada. Pero imprime en pantalla:
-         - Si la reserva fue cancelada con exito.
-
     """
-
-    consulta = ('DELETE FROM reserva where DNI = %(dni)s and Horario_Inicio = %(inicio)s and idaula = %(aula)s')
-
-    datos  = {'dni': dni_usuario, 'inicio': horario_inicio, 'aula': cod_aula}
-
-    conexion_bd(consulta, datos, 4)
+    opcion = input('Dese cancelar o actualizar una reserva (1: Cancelar, 2: Actualizar):')
+    if opcion == '1':
+        consulta = ('DELETE FROM reserva where DNI = %(dni)s and Horario_Inicio = %(inicio)s and idaula = %(aula)s')
+        datos = {'dni': dni_usuario, 'inicio': horario_inicio, 'aula': cod_aula}
+        conexion_bd(consulta, datos, 4)
+    elif opcion == '2':
+        dni = int(input('Ingresa el DNI del nuevo titular de la reserva: '))
+        actualizacion = ('UPDATE reserva SET DNI = %(nuevo)s where DNI = %(antiguo)s')
+        datos = {'nuevo': dni, 'antiguo': dni_usuario}
+        conexion_bd(actualizacion, datos, 3)
 
 
 def ver_reservas(cod_aula):
     """
-    Esta funcion muestra los registros de la tabla de reservas que tengan como ID a cod_aula.
+    Esta funcion muestra todos los registros de la tabla de reservas
+    o filtra por los que tengan como ID a cod_aula.
 
     Parametros:
         cod_aula[Int]
     """
-    consulta = ('SELECT * FROM reserva WHERE idaula = %(cod_aula)s')
-    datos = {'cod_aula': cod_aula}
-    resultados = conexion_bd(consulta, datos, 1)
-    system('cls')
-    formateador(resultados)
-    volver = input('\n Presione una letra para volver al menu:  ')
-    return
+    while True:
+        print('\n' * 50)
+        opcion = input('Desea mostrar todas las reservas o filtrar por aula(1: Sin filtro, 2: Con filtro): ')
+        if opcion == '1':
+            consulta = ('SELECT * FROM reserva')
+            resultados = conexion_bd(consulta, None, 1)
+            formateador(resultados)
+            volver = input('\n Presione una letra para volver al menu:  ')
+            return
+        elif opcion == '2':
+            consulta = ('SELECT * FROM reserva WHERE idaula = %(cod_aula)s')
+            datos = {'cod_aula': cod_aula}
+            resultados = conexion_bd(consulta, datos, 1)
+            system('cls')
+            formateador(resultados)
+            volver = input('\n Presione una letra para volver al menu:  ')
+            return
+        else:
+            print('Opcion incorrecta')
 
 
