@@ -1,3 +1,5 @@
+from Conexion_BD import conexion_bd
+
 def login():
     """
     Autenticacion de usuarios y registro de usuarios nuevos.

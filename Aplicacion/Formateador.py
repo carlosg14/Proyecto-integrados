@@ -11,6 +11,11 @@ def formateador(resultados: list, ancho = 20) -> None:
         - None: Esta funcion no retorna nada
     """
 
+    if not resultados:
+        print('\n' * 50)
+        print('La tabla esta vacia...')
+        return
+
     # Creacion e impresion del encambezado de cada tabla.
     print('\n' * 50)
     print('=' * len(resultados[0]) * 31 + '=')

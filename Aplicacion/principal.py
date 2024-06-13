@@ -1,5 +1,6 @@
-import CRUD
+import CRUD as crud
 import Login
+
 
 
 def main():
@@ -43,23 +44,23 @@ def main():
             horario_inicio = input('Ingrese el horario a recervar el aula (De 7 a 22 hs)(Formato Horas:Minutos): ')
             horario_finalizacion = input('Ingrese el horario de finalizacion (De 7 a 22 hs)(Formato Horas:Minutos): ')
             system('cls')
-            CRUD.reservar_aula(dni_usuario, capacidad_aula, proyector, emicion_en_vivo,  tipo_aula, horario_inicio,
+            crud.reservar_aula(dni_usuario, capacidad_aula, proyector, emicion_en_vivo,  tipo_aula, horario_inicio,
                                horario_finalizacion)
         elif opcion == "2":
             horario_inicio = input('Ingrese el horario de inicio de la reserva(Formato H:M): ')
             cod_aula = int(input('Ingrese el codigo del aula que esta reservada: '))
-            CRUD.cancelar_reserva(dni_usuario, horario_inicio, cod_aula)
+            crud.cancelar_reserva(dni_usuario, horario_inicio, cod_aula)
         elif opcion == "3":
             cod_aula = int(input('Ingrese el codigo del aula: '))
-            CRUD.ver_reservas(cod_aula)
+            crud.ver_reservas(cod_aula)
         elif opcion == "4":
-            pass
+            crud.aulas()
         elif opcion == "5":
-            pass
-        elif opcion == "6:":
-            pass
+            crud.edificios()
+        elif opcion == "6":
+            crud.usuarios()
         elif opcion == "7":
-            pass
+            crud.telefonos()
         elif opcion == "8":
             print('Hasta luego!!!')
             break
