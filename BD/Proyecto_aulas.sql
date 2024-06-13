@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `proyecto_aulas`.`aulas` (
   CONSTRAINT `idedificio`
     FOREIGN KEY (`idEdificio`)
     REFERENCES `proyecto_aulas`.`edificio` (`idedificio`))
+
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -82,7 +83,8 @@ CREATE TABLE IF NOT EXISTS `proyecto_aulas`.`reserva` (
     REFERENCES `proyecto_aulas`.`usuarios` (`dni`),
   CONSTRAINT `idaulas`
     FOREIGN KEY (`idaula`)
-    REFERENCES `proyecto_aulas`.`aulas` (`idAulas`))
+    REFERENCES `proyecto_aulas`.`aulas` (`idAulas`)
+    ON DELETE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -97,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `proyecto_aulas`.`Telefonos` (
   CONSTRAINT `fk_dni`
     FOREIGN KEY (`DNI`)
     REFERENCES `proyecto_aulas`.`usuarios` (`dni`)
-    ON DELETE NO ACTION
+    ON DELETE cascade
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 

@@ -60,7 +60,10 @@ def main():
         elif opcion == "6":
             crud.usuarios()
         elif opcion == "7":
-            crud.telefonos()
+            crud.telefonos(
+
+
+            )
         elif opcion == "8":
             print('Hasta luego!!!')
             break

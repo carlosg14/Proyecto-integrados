@@ -186,7 +186,7 @@ def edificios():
         print('1. Mostrar tabla.')
         print('2. Insertar registro.')
         print('3. Actualizar nombre de un edificio.')
-        print('4. Eliminar un aula.')
+        print('4. Eliminar un edificio.')
         print('5. Salir.')
         print('=' * 30)
         opcion = input('Ingrese una opcion: ')
@@ -274,7 +274,7 @@ def usuarios():
             formateador(resultado)
             volver = input('\nPresione enter para volver al menu...')
         elif opcion == '6':
-            pass
+            break
         else:
             print('Opcion incorrecta.')
 
