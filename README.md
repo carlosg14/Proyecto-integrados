@@ -24,4 +24,8 @@ Para lograrlo  se necesita informatizar el sistema de reservas. Cuenta con los s
 * **Login.py**: Este módulo se encarga de logear a los usuarios y en caso de que no este registrado, se lo registra.
 * **config**: En este archivo se guardan datos para configurar el programa tales como las credenciales para acceder a la BD.
 
+## Mapa de aplicacion
+![Python - Marco 1](https://github.com/carlosg14/Proyecto-integrados/assets/169003565/138303a1-01e9-4a5b-b495-7d2cc1447e95)
+
+
   
