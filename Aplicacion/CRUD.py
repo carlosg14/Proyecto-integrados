@@ -96,13 +96,11 @@ def cancelar_reserva(dni_usuario, horario_inicio, cod_aula):
         conexion_bd(actualizacion, datos, 3)
 
 
-def ver_reservas(cod_aula):
+def ver_reservas():
     """
     Esta funcion muestra todos los registros de la tabla de reservas
     o filtra por los que tengan como ID a cod_aula.
 
-    Parametros:
-        cod_aula[Int]
     """
     while True:
         print('\n' * 50)
@@ -114,6 +112,7 @@ def ver_reservas(cod_aula):
             volver = input('\n Presione una letra para volver al menu:  ')
             return
         elif opcion == '2':
+            cod_aula = int(input('Ingrese el codigo del aula: '))
             consulta = ('SELECT * FROM reserva WHERE idaula = %(cod_aula)s')
             datos = {'cod_aula': cod_aula}
             resultados = conexion_bd(consulta, datos, 1)

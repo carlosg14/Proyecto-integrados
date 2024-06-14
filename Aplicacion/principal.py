@@ -51,7 +51,6 @@ def main():
             cod_aula = int(input('Ingrese el codigo del aula que esta reservada: '))
             crud.cancelar_reserva(dni_usuario, horario_inicio, cod_aula)
         elif opcion == "3":
-            cod_aula = int(input('Ingrese el codigo del aula: '))
             crud.ver_reservas(cod_aula)
         elif opcion == "4":
             crud.aulas()
