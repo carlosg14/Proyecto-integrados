@@ -27,5 +27,12 @@ Para lograrlo  se necesita informatizar el sistema de reservas. Cuenta con los s
 ## Mapa de aplicacion
 ![Python - Marco 1](https://github.com/carlosg14/Proyecto-integrados/assets/169003565/138303a1-01e9-4a5b-b495-7d2cc1447e95)
 
+## Requrimientos para ejecutar programa.
+
+* Tener [python 3.12](https://www.python.org/downloads/) 🐍
+* Tener instalado el conector de python a mysql: [mysql-connector-python	8.4.0](https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html) 📦
+* Tener instalado [MySQL](https://dev.mysql.com/downloads/installer/)📦
+ 
+
 
   
