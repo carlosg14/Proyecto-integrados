@@ -18,6 +18,10 @@ Para lograrlo  se necesita informatizar el sistema de reservas. Cuenta con los s
 ## Modulos del programa
 
 * **Principal.py**: En este módulo se encuentra el menú principal de la aplicación. Desde este módulo se llaman a las demás funciones que se encuentran en el módulo CRUD.
-* **CRUD.py**: Aquí encontramos funciones encargadas de realizar las consultas a la base de datos.
+* **CRUD.py**: Aquí encontramos funciones encargadas de realizar los CRUD a todas las tablas de la base de datos.
+* **Conexion_BD.py**: Este módulo se encarga de abrir una conexion con la bd y realizar la consulta que se le pase por parametros.Luego de esto se cierra la conexion con la                        BD.
+* **Formateador.py**: Este módulo le da formato de tabla a los datos que se le pasan como parametro. Estos datos son los que se obtienen luego de las consultas a la BD.
+* **Login.py**: Este módulo se encarga de logear a los usuarios y en caso de que no este registrado, se lo registra.
+* **config**: En este archivo se guardan datos para configurar el programa tales como las credenciales para acceder a la BD.
 
   
